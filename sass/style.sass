@@ -1,0 +1,174 @@
+$primary: #FF3464
+
+html, body
+  height: 100vh
+
+body
+  font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif
+  font-weight: 400
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+  -moz-osx-font-smoothing: grayscale
+  -moz-font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased
+
+.date
+  position: absolute
+  top: 25%
+  left: 50%
+  transform: translateX(-50%)
+  padding: 12px
+  border: 0
+  background: #1a1a1a
+  color: white
+  text-align: center
+  outline: none
+
+.ui-datepicker
+  position: relative !important
+  top: 0% !important
+  right: 0% !important
+  bottom: 0% !important
+  left: 0% !important
+  height: 100%
+  padding: 5vh 30px 0 30px
+  background: #1a1a1a
+  color: white
+  visibility: hidden
+  @media screen and (max-width: 480px)
+    padding: 20px 15px 0 15px
+  &.active
+    visibility: visible
+
+.ui-datepicker-header
+  display: block
+  width: 100%
+  max-width: 980px
+  padding-bottom: 40px
+  margin: 0 auto
+  @media screen and (max-width: 480px)
+    padding-bottom: 20px
+  .ui-datepicker-title
+    text-align: center
+    select
+      -webkit-appearance: none
+      appearance: none
+      background: none
+      color: white
+      border: 0
+      margin: 0 2px
+      font-size: 32px
+      outline: none
+      @media screen and (max-width: 480px)
+        font-size: 24px
+  .ui-datepicker-prev,
+  .ui-datepicker-next
+    line-height: 48px
+    width: calc(100% / 7)
+    text-align: center
+    cursor: pointer
+    @media screen and (max-width: 480px)
+      line-height: 36px
+    span
+      display: none
+  .ui-datepicker-prev
+    float: left
+    &:after
+      content: "◀"
+  .ui-datepicker-next
+    float: right
+    &:after
+      content: "◀"
+      display: inline-block
+      transform: scaleX(-1)
+
+
+.ui-datepicker-calendar
+  width: 100%
+  max-width: 980px
+  margin: 0 auto
+  thead
+    tr
+      th
+        width: calc(100% / 7)
+        text-align: center
+        span
+          display: block
+          width: 100%
+          padding: 0
+          color: rgba(white,.25)
+          font-size: 20px
+          font-weight: 500
+          text-transform: uppercase
+          @media screen and (max-width: 480px)
+            font-size: 16px
+  tbody
+    tr
+      td
+        vertical-align: top
+        text-align: center
+        a
+          padding: 20px 0
+          @media screen and (max-width: 480px)
+            padding: 12px 0
+
+.ui-state-default
+  display: block
+  text-decoration: none
+  color: white
+  font-size: 24px
+  border-radius: 2px
+  @media screen and (max-width: 480px)
+    font-size: 20px
+  &:hover
+    background: $primary
+    text-decoration: none
+    color: white
+
+.ui-state-highlight
+  position: relative
+  color: $primary
+  &:after
+    position: absolute
+    display: block
+    top: 10px
+    width: 100%
+    text-align: center
+    font-size: 10px
+    font-weight: 600
+    content: 'TODAY'
+    @media screen and (max-width: 480px)
+      top: 4px
+
+.ui-state-active
+  color: $primary
+  background: rgba(white,.03)
+
+.ui-datepicker-unselectable
+  .ui-state-default
+    color: rgba(white,.15)
+    pointer-events: none
+    padding: 20px 0
+
+.ui-datepicker-buttonpane
+  width: 100%
+  max-width: 980px
+  margin: 0 auto
+  padding: 30px 0
+  text-align: center
+  @media screen and (max-width: 480px)
+    padding: 20px 0
+  .ui-datepicker-current
+    display: none
+  .ui-datepicker-close
+    background: none
+    border: none
+    margin: 0 auto
+    color: rgba($primary,.5)
+    text-transform: uppercase
+    cursor: pointer
+    font-size: 20px
+    font-weight: 700
+    outline: none
+    @media screen and (max-width: 480px)
+      font-size: 16px
